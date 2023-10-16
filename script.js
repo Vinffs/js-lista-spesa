@@ -1,17 +1,14 @@
 const shoppingList = new Array();
 const resultBox = document.querySelector('.alert');
 
-let stop = false;
-let i = 0;
+let item = '';
 
-while (!stop) {
-  let question = prompt('Quali sono i prodotti da acquistare?')
-  if (question === 'stop') {
-    stop = true;
-  } else {
-    shoppingList.push(question);
+while (item !== 'stop') {
+  item = prompt('Quali sono i prodotti da acquistare?')
+  item = item.trim();
+  if (item !== 'stop' && item !== '') {
+    shoppingList.push(item);
   }
-  i++;
 }
 
 for (let x = 0; x < shoppingList.length; x++) {
